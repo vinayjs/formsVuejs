@@ -86,7 +86,12 @@
                 <input type="text" >
             </label>
             `,
-            props: ['label']
+            props: ['label'],
+            data(){
+                return {
+                    inputValue: ""
+                }
+            }
         })
         app.mount('#app')
     </script>
