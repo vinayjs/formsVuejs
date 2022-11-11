@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+
         .box {
             background-color:brown;
             height: 200px;
@@ -19,36 +20,33 @@
         [v-cloak] {
             display: none;
         }
+        input{
+            margin: 10px;
+            display: block;
+        }
 
     </style>
 </head>
 <body>
     <div id="app" v-cloak>
         {{greeting}}
-        <input @keyup.enter="greet" v-model="greeting"/>
+        <input v-model="greeting" />
         <hr />
-        <button v-on:click="toggleBox">Toggle Box</button>
-        <div v-if="isVisible" class="box"></div>
+        <button v-on:click="isVisible = !isVisible">Toggle Box</button>
+        <div v-if="isVisible" class="box"></div> 
+       
     </div>
     <script src="https://unpkg.com/vue@next"></script>
     <script>
-      let app =   Vue.createApp({
-        data: function(){
-            return{
-                greeting: 'Hello Vue,Vinay here',
-                isVisible: false,
-            }
-        },
-        methods: {
-            toggleBox(){
-                this.isVisible = !this.isVisible
-            },
-            greet() {
-                console.log(this.greeting)
+      let app =   Vue.createApp ({
+        data: function () {
+            return {
+                greeting: 'vinay here',
+                isVisible: false
             }
         }
-      })
-      app.mount('#app')
+        })
+        app.mount('#app')
     </script>
 </body>
 </html>
