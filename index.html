@@ -29,8 +29,7 @@
 </head>
 <body>
     <div id="app" v-cloak>
-        {{greeting}}
-        <input @keyup.enter="greet" v-model="greeting" />
+        <login-form />
         <hr />
         <button v-on:click="toggleBox">Toggle Box</button>
         <div v-if="isVisible" class="box"></div> 
@@ -53,6 +52,20 @@
                 console.log(this.greeting);
             }
         }
+        })
+        app.component('login-form',{
+            template:`
+                <div>
+                    <h1>{{title}}</h1>
+                    <input type='email' />
+                    <input type='password' />
+                 </div>
+            `,
+            data() {
+                return {
+                    title: 'Login Form'
+                }
+            }
         })
         app.mount('#app')
     </script>
