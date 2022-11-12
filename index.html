@@ -33,16 +33,14 @@
         <hr />
         <button v-on:click="toggleBox">Toggle Box</button>
         <div v-if="isVisible" class="box"></div> 
-       
+        <div> The number of employees in a company X are: {{ numEmployees }}</div>
+        <div> Referencing numEmployees again: {{ numEmployees }} </div>
     </div>
     <script src="https://unpkg.com/vue@next"></script>
     <script>
       let app =   Vue.createApp ({
-        data: function () {
-            return {
-                greeting: 'vinay here',
-                isVisible: false
-            }
+        data: {
+            employees: ['Jayson', 'Alex', 'Cecilia', 'John', 'Ali']
         },
         methods: {
             toggleBox() {
@@ -51,6 +49,12 @@
             greet() {
                 console.log(this.greeting);
             }
+        },
+        computed: {
+             numEmployees: function () {
+             console.log(" The value got computed ");
+             return this.employees.length;
+        }
         }
         })
         app.component('login-form',{
@@ -83,7 +87,7 @@
             template: `
             <label>
                 {{label}}
-                <input type="text" >
+                <input type="text" v-model='inputValue'>
             </label>
             `,
             props: ['label'],
