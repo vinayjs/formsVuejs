@@ -35,12 +35,20 @@
         <div v-if="isVisible" class="box"></div> 
         <div> The number of employees in a company X are: {{ numEmployees }}</div>
         <div> Referencing numEmployees again: {{ numEmployees }} </div>
+        <p v-for=" employees in employeeList"> will show the name of each employees in the list : {{ eployee }} </p>
     </div>
     <script src="https://unpkg.com/vue@next"></script>
     <script>
       let app =   Vue.createApp ({
         data: {
-            employees: ['Jayson', 'Alex', 'Cecilia', 'John', 'Ali']
+            employees: ['Jayson', 'Alex', 'Cecilia', 'John', 'Ali'],
+            employeesList: [
+                    'Alex Han', 
+                    'Ali Usman', 
+                    'Peter Parker', 
+                    'John Lee', 
+                    'Eva Holmes'
+             ]
         },
         methods: {
             toggleBox() {
