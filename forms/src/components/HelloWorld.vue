@@ -11,10 +11,19 @@
     </div>
 
     <div>
-      <label for="'profile">Profile Summary</label>
+      <label for="profile">Profile Summary</label>
       <textarea id="profile" />
     </div>
-
+    <div>
+      <label for="country">Country</label>
+      <select id="country" row="3" col="3" v-model="formValues.country">
+        <option value="">Select a country</option>
+        <option value="india">India</option>
+        <option value="america">USA</option>
+        <option value="ussr">Russia</option>
+        <option value="UK">England</option>
+      </select>
+    </div>
    </forms>
 
 </template>
@@ -29,7 +38,8 @@ export default {
     return {
       formValues: {
         name: '',
-        profileSummary: ''
+        profileSummary: '',
+        country: ''
       }
     }
   }
