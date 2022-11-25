@@ -24,6 +24,17 @@
         <option value="UK">England</option>
       </select>
     </div>
+
+    <div>
+      <label for="job-location">Job Location</label>
+      <select id="job-location" multiple v-model="formValues.jobLocation">
+        <option value="germany">Germany</option>
+        <option value="india">India</option>
+        <option value="america">USA</option>
+        <option value="ussr">Russia</option>
+        <option value="UK">England</option>
+      </select>
+    </div>
    </forms>
 
 </template>
@@ -39,7 +50,8 @@ export default {
       formValues: {
         name: '',
         profileSummary: '',
-        country: ''
+        country: '',
+        jobLocation: []
       }
     }
   }
