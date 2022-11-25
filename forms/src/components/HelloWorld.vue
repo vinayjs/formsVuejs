@@ -1,5 +1,5 @@
 <template>
-   <forms>
+   <forms class="form">
     <div>
       <pre>
         {{JSON.stringify(formValues, null, 2)}}
@@ -9,6 +9,12 @@
       <label for="name">Name: </label>
       <input type="text" id="name" placeholder="your name" v-model="formValues.name">
     </div>
+
+    <div>
+      <label for="'profile">Profile Summary</label>
+      <textarea id="profile" />
+    </div>
+
    </forms>
 
 </template>
@@ -22,7 +28,8 @@ export default {
   data() {
     return {
       formValues: {
-        name: ''
+        name: '',
+        profileSummary: ''
       }
     }
   }
@@ -33,11 +40,17 @@ export default {
 <style scoped>
 label  {
   font-weight: bold;
-  display:inline-flex;
-  margin-bottom: 5px;
+  display:flex;
+  margin-bottom: 10px;
+  margin-top: 10px;
 }
-input {
-  position: flex
+input + label{
+  display: inline-flex;
+  margin-right: 20px;
 }
-
+input[type='text'],
+textarea,
+select{
+  display: block;
+}
 </style>
