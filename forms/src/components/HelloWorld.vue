@@ -1,8 +1,13 @@
 <template>
    <forms>
+    <div>
+      <pre>
+        {{JSON.stringify(formValues, null, 2)}}
+      </pre>
+    </div>
     <div> 
-      <label for="name">Name : </label>
-      <input type="text" id="name">
+      <label for="name">Name: </label>
+      <input type="text" id="name" placeholder="your name" v-model="formValues.name">
     </div>
    </forms>
 
@@ -26,8 +31,13 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h3 {
-  margin: 40px 0 0;
+label  {
+  font-weight: bold;
+  display:inline-flex;
+  margin-bottom: 5px;
+}
+input {
+  position: flex
 }
 
 </style>
