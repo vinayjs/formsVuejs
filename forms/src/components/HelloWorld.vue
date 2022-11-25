@@ -1,10 +1,5 @@
 <template>
-   <forms class="form">
-    <div>
-      <pre>
-        {{JSON.stringify(formValues, null, 2)}}
-      </pre>
-    </div>
+   <forms @submit="submitForm">
     <div> 
       <label for="name">Name </label>
       <input type="text" id="name" placeholder="your name" v-model="formValues.name">
@@ -48,6 +43,17 @@
       <input type="checkbox" id="javascript" value="javascript" v-model="formValues.skillSet"/>
       <label for="javscript">JAVASCRIPT</label>
     </div>
+    <div>
+      <label>Years of Experience</label>
+      <input type="radio" id="0-2" value="0-2" v-model="formValues.yearsOfExp"/>
+      <label for="0-2">0-2</label>
+      <input type="radio" id="0-3" value="0-3" v-model="formValues.yearsOfExp"/>
+      <label for="0-3">0-3</label>
+      <input type="radio" id="" value="3 or above" v-model="formValues.yearsOfExp"/>
+      <label for="3 or above">3 or above</label>
+    </div>
+
+    <button>Submit</button>
    </forms>
 
 </template>
@@ -66,8 +72,15 @@ export default {
         country: '',
         jobLocation: [],
         remoteWork: false,
-        skillSet:[]
+        skillSet:[],
+        yearsOfExp:''
       }
+    }
+  },
+  methods:{
+    submitForm(event) {
+      event.preventDefault()
+      console.log('Form values', this.formValues)
     }
   }
 }
