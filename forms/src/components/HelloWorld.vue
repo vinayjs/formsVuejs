@@ -6,7 +6,7 @@
       </pre>
     </div>
     <div> 
-      <label for="name">Name: </label>
+      <label for="name">Name </label>
       <input type="text" id="name" placeholder="your name" v-model="formValues.name">
     </div>
 
@@ -39,6 +39,15 @@
       <input type="checkbox" id="remoteWork" v-model="formValues.remoteWork" true-value='yes' false-value='no' />
       <label for="remoteWork">Open to Remote Work ?</label>
     </div>
+    <div>
+      <label>Skill Set</label>
+      <input type="checkbox" id="html" value="html" v-model="formValues.skillSet"/>
+      <label for="html">HTML</label>
+      <input type="checkbox" id="css" value="css" v-model="formValues.skillSet"/>
+      <label for="css">CSS</label>
+      <input type="checkbox" id="javascript" value="javascript" v-model="formValues.skillSet"/>
+      <label for="javscript">JAVASCRIPT</label>
+    </div>
    </forms>
 
 </template>
@@ -56,7 +65,8 @@ export default {
         profileSummary: '',
         country: '',
         jobLocation: [],
-        remoteWork: false
+        remoteWork: false,
+        skillSet:[]
       }
     }
   }
